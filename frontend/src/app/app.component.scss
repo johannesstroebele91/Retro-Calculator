@@ -1,5 +1,31 @@
 .container{
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 420px;
+  margin: 0 auto 90px auto;
   padding: 0 36px;
+}
+.example-form {
+  width: 100%;
+  margin: 0 auto;
+}
+.mat-raised-button {
+  width: 90%;
+  height: 90%;
+  padding: 0;
+}
+#search {
+  display: flex;
+  margin-top: 24px;
+  justify-content: center;
+}
+#search input {
+  border-color: #969696;
+}
+#search .mat-form-field-wrapper {
+  padding-bottom: 24px;
+  width: 90%;
+}
+#bg-calc {
+  border-radius: 6px;
+  padding: 6px;
+  background: #F2F2F2;
 }
