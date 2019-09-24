@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
@@ -17,7 +17,8 @@ import {FormsModule} from '@angular/forms';
     MatFormFieldModule,
     MatIconModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
