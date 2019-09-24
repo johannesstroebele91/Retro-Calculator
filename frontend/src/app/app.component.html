@@ -5,36 +5,38 @@
   </div>
   <h4>Type in your calculation or use the buttons: </h4>
   <div id="bg-calc">
-    <mat-form-field id="search">
+    <mat-form-field id="mainDisplay">
       <label>
-        <input matInput type="text" placeholder="Clearable input" [(ngModel)]="value">
+        <input matInput type="text" placeholder="Clearable input" [(ngModel)]="mainText">
       </label>
-      <button mat-button *ngIf="value"
+      <button mat-button *ngIf="mainText"
               matSuffix
-              aria-label="Clear" (click)="value=''">
+              aria-label="Clear" (click)="mainText=clearInput()"> <!-- TODO mainDisplay='0' -->
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
-    <mat-grid-list cols="4" rowHeight="2:1">
-      <mat-grid-tile><button mat-raised-button>7</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button>8</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button>9</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button color="primary">/</button></mat-grid-tile>
+    <p id="subDisplay">{{ subText }}</p>
 
-      <mat-grid-tile><button mat-raised-button>4</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button>5</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button>6</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button color="primary">+</button></mat-grid-tile>
+    <mat-grid-list cols="4" rowHeight="1:1">
+      <mat-grid-tile><button mat-raised-button (click)="pressKey('7')">7</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button (click)="pressKey('8')">8</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button (click)="pressKey('9')">9</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button color="primary" (click)="pressKey('/')">/</button></mat-grid-tile>
 
-      <mat-grid-tile><button mat-raised-button>1</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button>2</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button>3</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button color="primary">-</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button (click)="pressKey('4')">4</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button (click)="pressKey('5')">5</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button (click)="pressKey('6')">6</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button color="primary" (click)="pressKey('+')">+</button></mat-grid-tile>
 
-      <mat-grid-tile><button mat-raised-button color="warn">C</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button>0</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button color="accent">=</button></mat-grid-tile>
-      <mat-grid-tile><button mat-raised-button color="primary">X</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button (click)="pressKey('1')">1</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button (click)="pressKey('2')">2</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button (click)="pressKey('3')">3</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button color="primary" (click)="pressKey('-')">-</button></mat-grid-tile>
+
+      <mat-grid-tile><button mat-raised-button color="accent" (click)="pressKey('.')">.</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button (click)="pressKey('0')">0</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button color="accent" (click)="getAnswer()">=</button></mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button color="primary" (click)="pressKey('*')">*</button></mat-grid-tile>
     </mat-grid-list>
   </div>
 </div>
